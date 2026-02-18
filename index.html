@@ -1,7 +1,3 @@
-
-Index · HTML
-Copiar
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,24 +6,37 @@ Copiar
   <title>Iván Vázquez | Systems Engineer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Calibre:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/favicon-512x512.png">
+  
+
 </head>
 <body class="loading">
 
-  <!-- Loader -->
+  <!-- lOAdEr -->
   <div id="loader">
     <div class="loader-logo">
       <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="#64ffda" stroke-width="5" fill="none" class="hex-outline"/>
-        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#64ffda" font-size="38" font-family="'Fira Code', monospace" font-weight="500">IV</text>
+        <circle cx="50" cy="50" r="44" stroke="#64ffda" stroke-width="4" fill="none" class="circle-outline"/>
+        <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#64ffda" font-size="28" font-family="'Fira Code', monospace" font-weight="500">IV</text>
       </svg>
     </div>
   </div>
 
-  <!-- Mobile hamburger -->
+  <!-- rEspOnsIvE  -->
   <button class="hamburger" id="hamburger" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
+
+  <!-- lAngUAgE bUttOn — bOttOm rIght links to ES vErsIOn -->
+  <a href="index.html" class="lang-btn" aria-label="Versión en Español">
+    ES
+  </a>
 
   <!-- Mobile nav overlay -->
   <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -38,8 +47,8 @@ Copiar
     <div class="sidebar-top">
       <a href="#hero" class="logo" aria-label="home">
         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" stroke="#64ffda" stroke-width="5" fill="none"/>
-          <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#64ffda" font-size="38" font-family="'Fira Code', monospace" font-weight="500">IV</text>
+          <circle cx="50" cy="50" r="44" stroke="#64ffda" stroke-width="4" fill="none"/>
+          <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#64ffda" font-size="28" font-family="'Fira Code', monospace" font-weight="500">IV</text>
         </svg>
       </a>
 
@@ -66,6 +75,10 @@ Copiar
           <span class="nav-line"></span>
           <span class="nav-text">Contact</span>
         </a>
+        <a href="https://www.youtube.com" target="_blank" class="nav-link" title="resume">
+          <span class="nav-line"></span>
+          <span class="nav-text">Resume</span>
+        </a>
       </nav>
     </div>
 
@@ -73,16 +86,16 @@ Copiar
       <ul class="socials">
         <li>
           <a href="https://github.com/tuusuario" target="_blank" rel="noreferrer" aria-label="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
           </a>
         </li>
         <li>
-          <a href="https://linkedin.com/in/tuusuario" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://linkedin.com/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
         </li>
         <li>
-          <a href="mailto:tuemail@gmail.com" aria-label="Email">
+          <a href="iivanvqzmtz@gmail.com" aria-label="Email">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
         </li>
@@ -90,30 +103,40 @@ Copiar
     </div>
   </aside>
 
-  <!-- Main content -->
+  <!-- Content -->
   <main class="content" id="content">
 
-    <!-- Hero -->
+    <!-- HERO -->
     <section id="hero" class="hero fade-up">
       <p class="hero-intro">Hi, my name is</p>
       <h1 class="hero-name">Iván Vázquez.</h1>
       <h2 class="hero-tagline">I build reliable systems.</h2>
       <p class="hero-desc">
-        I'm a Systems Engineer specializing in cloud infrastructure, automation,
-        and security. I design scalable and secure solutions that keep things running.
+        I'm a Systems &amp; Petroleum Engineer specializing in cloud infrastructure, automation,
+        and security. I bridge the gap between the industrial world and modern technology to
+        design solutions that are scalable, secure, and resilient.
       </p>
-      <a href="mailto:tuemail@gmail.com" class="btn">Get In Touch</a>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section id="about" class="section fade-up">
-      <h2 class="section-heading"><span class="section-number">01.</span> About Me</h2>
+      <h2 class="section-heading">
+        <span class="section-number">01.</span> About Me
+      </h2>
       <div class="about-grid">
         <div class="about-text">
           <p>
-            I'm a systems engineer with hands-on experience in Linux, cloud platforms,
-            networking, and automation. I enjoy designing infrastructure that is not only
-            scalable, but secure and easy to maintain.
+            I'm an engineer with a dual background in <span class="highlight">Petroleum Engineering</span>
+            and <span class="highlight">Systems / Computer Engineering</span> — a combination that gives
+            me a unique perspective on complex technical challenges. I've worked across the energy sector,
+            international organizations, and the tech industry, always at the intersection of data,
+            infrastructure, and automation.
+          </p>
+          <p>
+            From designing risk analysis systems for oil &amp; gas facilities to building cloud
+            infrastructure and automating operational workflows for the UN, I bring an analytical
+            engineering mindset to everything I build. I enjoy creating solutions that are not only
+            technically solid, but meaningful in the real world.
           </p>
           <p>
             When I'm not provisioning cloud resources or writing automation scripts,
@@ -121,14 +144,20 @@ Copiar
           </p>
           <p>Here are a few technologies I've been working with:</p>
           <ul class="skills-list">
-            <li>Linux (RHEL/Ubuntu)</li>
+            <li>Linux (Kali / Ubuntu)</li>
             <li>AWS / Azure</li>
             <li>Terraform / Ansible</li>
+            <li>Jenkins / GitHub Actions</li>
             <li>Docker / Kubernetes</li>
             <li>Python / Bash</li>
-            <li>Networking & Security</li>
+            <li>Networking &amp; Security</li>
+            <li>SQL / NoSQL</li>
+            <li>Power bi / Tableau</li>
+            <li>Wireshark / Nmap</li>
+            <li>GitHub / GitLab</li>
           </ul>
         </div>
+        <!--
         <div class="about-img">
           <div class="img-wrapper">
             <div class="img-placeholder">
@@ -139,44 +168,63 @@ Copiar
             </div>
           </div>
         </div>
+        -->
       </div>
     </section>
 
-    <!-- Experience -->
+    <!-- EXPERIENCE -->
     <section id="experience" class="section fade-up">
-      <h2 class="section-heading"><span class="section-number">02.</span> Experience</h2>
+      <h2 class="section-heading">
+        <span class="section-number">02.</span> Experience
+      </h2>
       <div class="tabs">
         <div class="tab-list" role="tablist">
-          <button class="tab-btn active" data-tab="0" role="tab">Company</button>
-          <button class="tab-btn" data-tab="1" role="tab">Freelance</button>
+          <button class="tab-btn active" data-tab="0" role="tab">IOM – UN</button>
+          <button class="tab-btn" data-tab="1" role="tab">EC4</button>
+          <button class="tab-btn" data-tab="2" role="tab">Freelance</button>
         </div>
         <div class="tab-panels">
+
           <div class="tab-panel active" data-panel="0">
-            <h3>Cloud Engineer <span class="tab-company">@ Company</span></h3>
-            <p class="tab-date">January 2023 — Present</p>
+            <h3>Operations Assistant &amp; Data Analyst <span class="tab-company">@ IOM – UN</span></h3>
+            <p class="tab-date">December 2019 — Present · Mexico–United States Border</p>
             <ul>
-              <li>Designed and maintained cloud infrastructure on AWS, reducing operational costs by 20%</li>
-              <li>Automated deployment pipelines using Bash and Python scripts, cutting release time in half</li>
-              <li>Improved system reliability through monitoring, alerting, and incident response protocols</li>
-              <li>Collaborated with security team to implement best practices and harden cloud environments</li>
+              <li>Designed and maintained operational dashboards in Power BI and Excel to monitor KPIs in real time, supporting decision-making at national and international levels.</li>
+              <li>Managed data and information flows among multiple geographically distributed teams, ensuring consistency, quality, and timely availability of data.</li>
+              <li>Coordinated the collection, cleaning, and processing of large volumes of operational and logistical data for executive reports.</li>
+              <li>Trained staff on digital platforms and data collection tools (MIMOSA), reducing report generation time.</li>
+              <li>Managed information coordination between government agencies, NGOs, and UN agencies under international data confidentiality standards.</li>
             </ul>
           </div>
+
           <div class="tab-panel" data-panel="1">
-            <h3>Systems Consultant <span class="tab-company">@ Freelance</span></h3>
-            <p class="tab-date">2021 — 2023</p>
+            <h3>Risk Engineer <span class="tab-company">@ EC4 Consulting</span></h3>
+            <p class="tab-date">January 2018 — December 2018 · Mexico City</p>
             <ul>
-              <li>Provided Linux server administration and configuration for small businesses</li>
-              <li>Set up VPN solutions and network monitoring for remote teams</li>
-              <li>Wrote custom automation scripts to streamline repetitive IT tasks</li>
+              <li>Implemented data analysis systems for operational risk evaluation in industrial facilities using specialized software (ALOHA, PHAST).</li>
+              <li>Generated predictive scenarios and impact visualizations through computational simulations, integrating results into risk assessment dashboards.</li>
+              <li>Prepared detailed technical reports for energy sector clients, translating complex analyses into clear deliverables for technical and executive audiences.</li>
+              <li>Applied structured analysis methodologies (HAZOP, What-If, Fault Tree Analysis) to identify vulnerabilities in critical systems.</li>
             </ul>
           </div>
+          <div class="tab-panel" data-panel="2">
+            <h3>Independent Technology Services <span class="tab-company">@ Freelance</span></h3>
+            <p class="tab-date">2024 — Present</p>
+            <ul>
+              <li>Developed and deployed websites for small businesses, managing hosting environments, domain configuration, and online service availability with basic security and access management.</li>
+              <li>Performed preventive and corrective maintenance on computers, managing system updates, security patches, software licensing, and endpoint vulnerability management.</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- PROJECTS -->
     <section id="projects" class="section fade-up">
-      <h2 class="section-heading"><span class="section-number">03.</span> Projects</h2>
+      <h2 class="section-heading">
+        <span class="section-number">03.</span> Projects
+      </h2>
       <div class="projects-grid">
 
         <div class="project-card">
@@ -185,18 +233,17 @@ Copiar
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div class="project-links">
-              <a href="#" aria-label="GitHub link" title="GitHub">
+              <a href="https://www.reddit.com/r/OddSatisfying/comments/swygni/clock_hitting_midnight/" target="_blank" rel="noreferrer" title="source">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="#" title="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
             </div>
           </div>
-          <h3 class="project-title">Monitoring Scripts</h3>
-          <p class="project-desc">A collection of Bash scripts for real-time CPU, memory, and disk monitoring. Sends alerts via email when thresholds are exceeded.</p>
-          <ul class="project-tech">
-            <li>Bash</li>
-            <li>Linux</li>
-            <li>cron</li>
-          </ul>
+          <h3 class="project-title">Animated Clock</h3>
+          <p class="project-desc">Interactive clock animation inspired by a viral Reddit video. Recreates the visual effect of clock hands spinning toward midnight with smooth transitions.</p>
+          <ul class="project-tech"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
         </div>
 
         <div class="project-card">
@@ -205,18 +252,14 @@ Copiar
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div class="project-links">
-              <a href="#" aria-label="GitHub link" title="GitHub">
+              <a href="#" title="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
             </div>
           </div>
-          <h3 class="project-title">Cloud Lab</h3>
-          <p class="project-desc">Personal AWS sandbox environment for testing infrastructure-as-code templates, VPC setups, and IAM policy configurations.</p>
-          <ul class="project-tech">
-            <li>AWS</li>
-            <li>Terraform</li>
-            <li>CloudFormation</li>
-          </ul>
+          <h3 class="project-title">Password Generator</h3>
+          <p class="project-desc">Shell script that generates random 12-character passwords guaranteeing at least one digit, uppercase, lowercase, and special character from the set &gt;&lt;+-{}:.&amp;;</p>
+          <ul class="project-tech"><li>Shell</li><li>Linux</li><li>Bash</li></ul>
         </div>
 
         <div class="project-card">
@@ -225,24 +268,68 @@ Copiar
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div class="project-links">
-              <a href="#" aria-label="GitHub link" title="GitHub">
+              <a href="#" title="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
             </div>
           </div>
-          <h3 class="project-title">Auto-Deploy Pipeline</h3>
-          <p class="project-desc">CI/CD pipeline using GitHub Actions to automate testing and deployment of containerized applications to a Linux server.</p>
-          <ul class="project-tech">
-            <li>GitHub Actions</li>
-            <li>Docker</li>
-            <li>Python</li>
-          </ul>
+          <h3 class="project-title">Automated Log Backup</h3>
+          <p class="project-desc">Automates daily backups of system log files using a cron job, ensuring availability and traceability of system logs.</p>
+          <ul class="project-tech"><li>Shell</li><li>Linux</li><li>cron</li></ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-folder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="#" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Linux System Monitor</h3>
+          <p class="project-desc">Bash script that continuously monitors CPU, memory, and disk usage, displaying real-time percentages and sending automatic alerts when defined thresholds are exceeded.</p>
+          <ul class="project-tech"><li>Linux</li><li>Bash</li><li>Shell</li></ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-folder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="#" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Flappy Bird in C</h3>
+          <p class="project-desc">Implementation of the classic Flappy Bird game in C, leveraging the ncurses graphics library for terminal rendering and incorporating full game logic control.</p>
+          <ul class="project-tech"><li>C</li><li>ncurses</li><li>Shell</li></ul>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <div class="project-folder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#64ffda" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="https://www.tragenza.com/" target="_blank" rel="noreferrer" title="Inspiration">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Tragenza Transportes — Website</h3>
+          <p class="project-desc">Corporate website for a freight logistics company operating across Mexico's Pacific corridor. Built with a focus on service clarity, mobile responsiveness, and professional presentation for B2B clients in the manufacturing and heavy cargo sectors.</p>
+          <ul class="project-tech"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
         </div>
 
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact" class="section fade-up contact-section">
       <p class="contact-overline">04. What's Next?</p>
       <h2 class="contact-title">Get In Touch</h2>
@@ -250,11 +337,11 @@ Copiar
         I'm currently open to new opportunities. Whether you have a question,
         a project in mind, or just want to say hi — my inbox is always open.
       </p>
-      <a href="mailto:tuemail@gmail.com" class="btn btn-lg">Say Hello</a>
+      <a href="iivanvqzmtz@gmail.com" class="btn btn-lg">Say Hello</a>
     </section>
 
     <footer>
-      <p>Designed &amp; Built by <span>Iván Vázquez</span></p>
+      <p>Built by <span>Iván Vázquez</span></p>
     </footer>
 
   </main>

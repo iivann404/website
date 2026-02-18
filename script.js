@@ -1,18 +1,13 @@
-/* ============================================================
-   script.js — Iván Vázquez Portfolio
-   ============================================================ */
-
 'use strict';
 
 // ─── LOADER ───────────────────────────────────────────────────
-const loader  = document.getElementById('loader');
-const body    = document.body;
+const loader = document.getElementById('loader');
+const body   = document.body;
 
 window.addEventListener('load', () => {
   setTimeout(() => {
     loader.classList.add('hidden');
     body.classList.remove('loading');
-    // Kick off scroll animations check
     observeSections();
   }, 1400);
 });
@@ -42,7 +37,6 @@ hamburger.addEventListener('click', () => {
 
 mobileOverlay.addEventListener('click', closeMenu);
 
-// Close menu on nav link click (mobile)
 document.querySelectorAll('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     if (window.innerWidth <= 768) closeMenu();
@@ -61,9 +55,9 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// ─── ACTIVE NAV HIGHLIGHT (Intersection Observer) ────────────
-const navLinks   = document.querySelectorAll('.nav-link');
-const sections   = document.querySelectorAll('section[id]');
+// ─── ACTIVE NAV HIGHLIGHT ─────────────────────────────────────
+const navLinks = document.querySelectorAll('.nav-link');
+const sections = document.querySelectorAll('section[id]');
 
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -80,7 +74,6 @@ sections.forEach(s => navObserver.observe(s));
 // ─── FADE-UP ON SCROLL ────────────────────────────────────────
 function observeSections() {
   const fadeEls = document.querySelectorAll('.fade-up');
-
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -91,12 +84,7 @@ function observeSections() {
   }, { threshold: 0.1 });
 
   fadeEls.forEach((el, i) => {
-    // Stagger delay for hero children
-    if (el.classList.contains('hero')) {
-      el.style.transitionDelay = '0s';
-    } else {
-      el.style.transitionDelay = `${i * 0.05}s`;
-    }
+    el.style.transitionDelay = el.classList.contains('hero') ? '0s' : `${i * 0.05}s`;
     fadeObserver.observe(el);
   });
 }
@@ -108,17 +96,14 @@ const tabPanels = document.querySelectorAll('.tab-panel');
 tabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     const target = btn.dataset.tab;
-
     tabBtns.forEach(b => b.classList.remove('active'));
     tabPanels.forEach(p => p.classList.remove('active'));
-
     btn.classList.add('active');
     document.querySelector(`.tab-panel[data-panel="${target}"]`).classList.add('active');
   });
 });
 
 // ─── CURSOR SPOTLIGHT ────────────────────────────────────────
-// Only on non-touch devices
 if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   const spotlight = document.createElement('div');
   spotlight.classList.add('spotlight');
@@ -133,7 +118,6 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   });
 
   function animateSpotlight() {
-    // Lerp for smooth lag
     currentX += (mouseX - currentX) * 0.08;
     currentY += (mouseY - currentY) * 0.08;
     spotlight.style.transform = `translate(${currentX - 200}px, ${currentY - 200}px)`;
@@ -143,32 +127,25 @@ if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   animateSpotlight();
 }
 
-// ─── PROJECT CARD TILT (subtle) ──────────────────────────────
+// ─── PROJECT CARD TILT ───────────────────────────────────────
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('mousemove', e => {
-    const rect   = card.getBoundingClientRect();
-    const cx     = rect.left + rect.width  / 2;
-    const cy     = rect.top  + rect.height / 2;
-    const dx     = (e.clientX - cx) / (rect.width  / 2);
-    const dy     = (e.clientY - cy) / (rect.height / 2);
+    const rect = card.getBoundingClientRect();
+    const dx   = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+    const dy   = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
     card.style.transform = `translateY(-6px) rotateX(${-dy * 4}deg) rotateY(${dx * 4}deg)`;
   });
-
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; });
 });
 
-// ─── SECTION HEADING NUMBER COUNTER EFFECT ───────────────────
+// ─── SECTION NUMBER COUNTER EFFECT ───────────────────────────
 document.querySelectorAll('.section-number').forEach(el => {
   const target = parseInt(el.textContent);
   el.textContent = '00.';
 
   const numObserver = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        el.textContent = `0${target}.`;
-      }, 200);
+      setTimeout(() => { el.textContent = `0${target}.`; }, 200);
       numObserver.disconnect();
     }
   }, { threshold: 0.5 });
