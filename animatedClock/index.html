@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- 
+       BOTONES DE CONTROL
+       Están posicionados en la esquina superior derecha.
+       El botón "start" inicia el reloj y "stop" lo detiene.
+       La posición exacta se define en el CSS con
+       position: absolute, top y right.
+ -->
+  <div class="buttons">
+    <button class="start">Run</button>
+    <button class="stop">Stop</button>
+  </div>
+
+  <!-- 
+       CONTENEDOR PRINCIPAL DEL RELOJ
+       Agrupa las tres secciones: horas, minutos y segundos.
+       Cada sección tiene dos columnas de dígitos:
+       - digit--tens  → columna de las DECENAS (dígito izquierdo)
+       - digit--units → columna de las UNIDADES (dígito derecho)
+
+       El JavaScript llenará cada columna con números (0-9)
+       y los animará moviéndolos hacia arriba.
+
+       El <span class="marker"> es el círculo que resalta
+       el número que está visible en ese momento.
+   -->
+  <main class="container">
+
+    <!-- HORAS: muestra de 00 a 23 -->
+    <section class="digits digits--hours">
+      <div class="digit digit--tens">
+        <span class="marker"></span>
+      </div>
+      <div class="digit digit--units">
+        <span class="marker"></span>
+      </div>
+    </section>
+
+    <!-- MINUTOS: muestra de 00 a 59 -->
+    <section class="digits digits--minutes">
+      <div class="digit digit--tens">
+        <span class="marker"></span>
+      </div>
+      <div class="digit digit--units">
+        <span class="marker"></span>
+      </div>
+    </section>
+
+    <!-- SEGUNDOS: muestra de 00 a 59 -->
+    <section class="digits digits--seconds">
+      <div class="digit digit--tens">
+        <span class="marker"></span>
+      </div>
+      <div class="digit digit--units">
+        <span class="marker"></span>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="clock.js"></script>
+
+</body>
+</html>
