@@ -1,0 +1,37 @@
+# Terraform state and plans
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfplan.*
+.terraform.lock.hcl
+
+# Terraform vars (allow .example)
+*.tfvars
+!*.tfvars.example
+
+# Discovery files — contain account IDs and resource metadata
+infra/discovery/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# AWS credentials
+.aws/
+credentials
+*.pem
+*.key
+
+# Downloaded site snapshot (Phase 2 artifact)
+src/
+
+# OS / Editor
+.DS_Store
+**/.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo

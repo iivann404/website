@@ -1,0 +1,87 @@
+name: Deploy Static Site
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'index.html'
+      - 'style.css'
+      - 'script.js'
+      - 'animatedClock/**'
+      - 'es/**'
+      - 'assets/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: us-east-2
+          role-session-name: gh-${{ github.run_id }}
+
+      - name: Sync assets (long cache, with delete)
+        run: |
+          aws s3 sync . s3://aivanvqz \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "infra/*" \
+            --exclude "src/*" \
+            --exclude "*.html" \
+            --exclude ".DS_Store" \
+            --exclude "README.md" \
+            --exclude "Dockerfile" \
+            --cache-control "max-age=31536000, immutable" \
+            --delete
+
+      - name: Sync HTML (no cache)
+        run: |
+          find . -name "*.html" \
+            -not -path "./.git/*" \
+            -not -path "./.github/*" \
+            -not -path "./infra/*" \
+            -not -path "./src/*" | \
+          while read -r f; do
+            key="${f#./}"
+            aws s3 cp "$f" "s3://aivanvqz/$key" \
+              --cache-control "no-store, max-age=0" \
+              --content-type "text/html; charset=utf-8"
+          done
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id EBEQVFSJRRLE \
+            --paths "/*"
+
+      - name: Deployment summary
+        run: |
+          {
+            echo "## Deployment Complete"
+            echo "| Field | Value |"
+            echo "|---|---|"
+            echo "| Branch | \`${{ github.ref_name }}\` |"
+            echo "| Commit | \`${{ github.sha }}\` |"
+            echo "| Actor | ${{ github.actor }} |"
+            echo "| Site | https://d1ygos5z2jfuhy.cloudfront.net |"
+          } >> "$GITHUB_STEP_SUMMARY"

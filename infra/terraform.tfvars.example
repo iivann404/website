@@ -1,0 +1,6 @@
+aws_region                 = "us-east-2"
+github_owner               = "your-github-username"
+github_repo                = "your-repo-name"
+github_branch              = "main"
+s3_bucket_name             = "your-bucket-name"
+cloudfront_distribution_id = "YOUR_DISTRIBUTION_ID"
