@@ -23,7 +23,7 @@ Sitio estático en S3 + CloudFront, desplegado automáticamente desde GitHub Act
                        │ cloudfront:CreateInvalidation
                        ▼
 ┌──────────────────────────────────────────────────────────────┐
-│  AWS us-east-2 (account 857145323507)                        │
+│  AWS us-east-2 (account)                        │
 │                                                              │
 │  ┌───────────────┐   OAC sigv4     ┌────────────────────┐   │
 │  │  CloudFront   │ ◄────────────── │   S3  aivanvqz     │   │
@@ -41,13 +41,12 @@ Sitio estático en S3 + CloudFront, desplegado automáticamente desde GitHub Act
 
 ## Desplegar
 
-Solo necesitas hacer `git push`:
+`git push`:
 
-```bash
 git add <archivos-modificados>
 git commit -m "descripción del cambio"
 git push origin main
-```
+
 
 El workflow se activa automáticamente cuando hay cambios en:
 `index.html`, `style.css`, `script.js`, `animatedClock/`, `es/`, `assets/`
@@ -71,41 +70,7 @@ terraform apply
 | `iam_oidc.tf` | OIDC provider de GitHub |
 | `iam_role.tf` | Rol y policy de GitHub Actions |
 
-## Rollback y recuperación
 
-### Sitio muestra contenido antiguo
-```bash
-aws cloudfront create-invalidation \
-  --distribution-id EBEQVFSJRRLE \
-  --paths "/*"
-```
+### State de Terraform
+El state está en S3 con versionado
 
-### Restaurar un archivo a versión anterior (versionado S3 activo)
-```bash
-# Lista versiones
-aws s3api list-object-versions --bucket aivanvqz --prefix index.html
-
-# Restaura (reemplaza <VERSION_ID>)
-aws s3api copy-object \
-  --bucket aivanvqz \
-  --copy-source "aivanvqz/index.html?versionId=<VERSION_ID>" \
-  --key index.html
-```
-
-### El rol de GitHub Actions desapareció
-```bash
-cd infra && terraform apply
-```
-
-### Perdí el state de Terraform
-```bash
-# El state está en S3 con versionado
-aws s3api list-object-versions \
-  --bucket tfstate-857145323507-us-east-2 \
-  --prefix static-site/terraform.tfstate
-```
-
-## Requisitos para trabajar localmente
-
-- AWS CLI configurado (`us-east-2`, usuario `macbook-ivan`)
-- Terraform >= 1.5
